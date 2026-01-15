@@ -5,11 +5,16 @@
 
 ### ⚠ BREAKING CHANGES
 
-* version 3 ([#186](https://github.com/olimorris/persisted.nvim/issues/186))
+* feat: new command format
 
 ### Features
 
-* version 3 ([#186](https://github.com/olimorris/persisted.nvim/issues/186)) ([f3f9aea](https://github.com/olimorris/persisted.nvim/commit/f3f9aeac9c8dc4a6df8844547bbfebadfa063d67))
+* feat: new command format ([#183](https://github.com/olimorris/persisted.nvim/issues/183))
+* feat: can delete session in vim.ui.select ([#184](https://github.com/olimorris/persisted.nvim/issues/184))
+
+### Tests
+
+* tests: move from plenary to mini.test ([#185](https://github.com/olimorris/persisted.nvim/issues/185)
 
 ## [2.1.1](https://github.com/olimorris/persisted.nvim/compare/v2.1.0...v2.1.1) (2025-08-16)
 
