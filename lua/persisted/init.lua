@@ -111,7 +111,7 @@ function M.start()
   vim.api.nvim_create_autocmd("VimLeavePre", {
     group = vim.api.nvim_create_augroup("Persisted", { clear = true }),
     callback = function()
-      M.save()
+      M.save({ auto = true })
     end,
   })
 
@@ -128,7 +128,7 @@ function M.stop()
 end
 
 ---Save the session
----@param opts? { force?: boolean, name?: string, session?: string }
+---@param opts? { auto?: boolean, force?: boolean, name?: string, session?: string }
 ---@return nil
 function M.save(opts)
   opts = opts or {}
@@ -136,6 +136,10 @@ function M.save(opts)
   -- Do not save the session if should_save evals to false...unless it's forced
   if type(config.should_save) == "function" and not config.should_save() and not opts.force then
     return
+  end
+
+  if type(config.before_save) == "function" then
+    config.before_save({ auto = opts.auto == true })
   end
 
   local session = opts.session or (opts.name and M.named(opts.name)) or vim.g.persisting_session or M.current()
