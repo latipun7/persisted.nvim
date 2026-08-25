@@ -36,6 +36,15 @@
 
 Install and configure the plugin with your preferred package manager:
 
+**vim.pack**
+
+```lua
+vim.pack.add({ "https://www.github.com/olimorris/persisted.nvim" })
+
+-- Somewhere in your config
+require("persisted").setup()
+```
+
 **[Lazy.nvim](https://github.com/folke/lazy.nvim)**
 
 ```lua
